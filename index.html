@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <form class="js-speaker-form">
+      <label for="name">Имя</label>
+      <input type="text" name="user-name" id="name" />
+
+      <label for="tel">telephone</label>
+      <input typ="tel" name="tel" id="tel" />
+
+      <label for="email">pochta</label>
+      <input typ="email" name="mail" id="email" />
+      <br />
+      <div role="group">
+        <input type="checkbox" name="topic-1" value="HTML" id="html" />
+        <label for="html">HTML</label>
+        <br />
+        <input type="checkbox" name="topic-2" value="css" id="css" />
+        <label for="css">css</label>
+        <br />
+        <input type="checkbox" name="topic-3" value="js" id="js" />
+        <label for="js">JavaScript</label>
+      </div>
+      <div role="group">
+        <input type="radio" name="experience" id="junior" value="junior" />
+        <label for="">Junior</label>
+
+        <input type="radio" name="experience" id="middle" value="middle" />
+        <label for="">middle</label>
+
+        <input type="radio" name="experience" id="senior" value="senior" />
+        <label for="">senior</label>
+      </div>
+      <br />
+
+      <button type="submit">Оставить заявку</button>
+    </form>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+          });
+      })();
+    </script>
+  </body>
+</html>
